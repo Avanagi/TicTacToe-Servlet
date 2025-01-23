@@ -1,0 +1,46 @@
+td {
+    border: 3px solid black;
+    padding: 10px;
+    border-collapse: separate;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    text-align: center;
+    empty-cells: show;
+}
+
+.mainHeader {
+    color: darkslateblue;
+    text-align: center;
+    font-style: italic;
+    font-size: 128px;
+    font-weight: bold;
+}
+
+.tableHeader {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    background-color: blanchedalmond;
+    margin-left: 30%;
+}
+
+.result {
+    text-align: center;
+    color: chartreuse;
+}
+
+.ui-button {
+    margin-left: 43%;
+    width: 150px;
+    height: 60px;
+    align-content: center;
+    align-items: center;
+    color: blueviolet;
+    background-color: blanchedalmond;
+    border: 3px solid black;
+    border-collapse: separate;
+    border-radius: 12px;
+    text-align: center;
+}

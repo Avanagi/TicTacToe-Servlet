@@ -1,17 +1,18 @@
-<%@ page import="com.tictactoe.Sign" %>
+<%@ page import="com.tictactoe.entity.Sign" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="<c:url value="/static/jquery-3.6.0.min.js"/>"></script>
-    <link href="static/main.css" rel="stylesheet">
+    <link href="static/css/main.css" rel="stylesheet">
+    <script src="static/js/main.js"></script>
+    <script src="<c:url value="/resources/jquery-3.6.0.min.js"/>"></script>
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
-<h1>Tic-Tac-Toe</h1>
+<h1 class="mainHeader">Tic-Tac-Toe</h1>
 
-<table>
+<table class="tableHeader">
     <tr>
         <td onclick="window.location='/logic?click=0'">${data.get(0).getSign()}</td>
         <td onclick="window.location='/logic?click=1'">${data.get(1).getSign()}</td>
@@ -34,32 +35,17 @@
 <c:set var="NOUGHTS" value="<%=Sign.NOUGHT%>"/>
 
 <c:if test="${winner == CROSSES}">
-    <h1>CROSSES WIN!</h1>
-    <button onclick="restart()">Start again</button>
+    <h1 class="result">CROSSES WIN!</h1>
+    <button class="ui-button" onclick="restart()">Start again</button>
 </c:if>
 <c:if test="${winner == NOUGHTS}">
-    <h1>NOUGHTS WIN!</h1>
-    <button onclick="restart()">Start again</button>
+    <h1 class="result">NOUGHTS WIN!</h1>
+    <button class="ui-button" onclick="restart()">Start again</button>
 </c:if>
 <c:if test="${draw}">
-    <h1>IT'S A DRAW</h1>
-    <br>
-    <button onclick="restart()">Start again</button>
+    <h1 class="result">IT'S A DRAW</h1>
+    <button class="ui-button" onclick="restart()">Start again</button>
 </c:if>
-
-<script>
-    function restart() {
-        $.ajax({
-            url: '/restart',
-            type: 'POST',
-            contentType: 'application/json;charset=UTF-8',
-            async: false,
-            success: function () {
-                location.reload();
-            }
-        });
-    }
-</script>
 
 </body>
 </html>
